@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Cube = require("./Cube");
+const Cube = require("./Plink");
 const accessorySchema = new mongoose.Schema({
     name: { type: String, required: true },
    imageUrl: { type: String, required: true },

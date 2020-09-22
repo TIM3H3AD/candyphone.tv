@@ -1,9 +1,9 @@
 {
-    "name": "name",
-    "description": "description",
-    "authors": "author",
+    "name": "candyphone.tv",
+    "description": "King Sissy Cogan's Kpop Plomari Link Builder",
+    "authors": "Terri Reubens",
     "version": "1.0.0",
-    "main": "pathToMain",
+    "main": "index.js",
     "dependencies": {
         "body-parser": "^1.19.0",
         "express": "^4.17.1",

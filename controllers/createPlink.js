@@ -1,11 +1,11 @@
 
-const Cube = require("../models/Cube");
+const Plink = require("../models/Plink");
 const Accessory = require("../models/Accessory");
 
 module.exports ={
     route:(req,res)=>{
-        res.render("createCube",{
-            title:"Create Cube Page"
+        res.render("createPlink",{
+            title:"Create Plink"
         });
         
      },

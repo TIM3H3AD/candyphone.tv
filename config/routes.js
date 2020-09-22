@@ -1,8 +1,8 @@
 let homeRouter = require("../controllers/home.js");
 let aboutRouter = require("../controllers/about.js");
-let createRouter = require("../controllers/createCube.js").route;
+let createRouter = require("../controllers/createPlink.js").route;
 let detailsRouter = require("../controllers/details.js");
-let createData = require("../controllers/createCube.js").data;
+let createData = require("../controllers/createPlink.js").data;
 
 module.exports = (app) => {
     //console.log(app);
@@ -12,10 +12,10 @@ module.exports = (app) => {
     app.get("/about",(req,res)=>{
         aboutRouter(req,res);
     });
-    app.get("/createCube",(req,res)=>{
+    app.get("/createPlink",(req,res)=>{
         createRouter(req,res);
     });
-    app.post("/createCube",(req,res)=>{
+    app.post("/createPlink",(req,res)=>{
         createData(req,res);
     });
     app.get("/details/:id",(req,res)=>{
