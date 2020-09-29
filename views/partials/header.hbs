@@ -1,0 +1,24 @@
+<header>
+      <ul>
+        <li><img class="logo" src="/images/logo.png"></li>
+        <li><a href="/">Browse</a></li>
+        <li><a href="/about">About</a></li>
+        {{#if loggedIn}}
+        <li><a href="/createCube">Add a Cube</a></li>
+        <li><a href="/createAccessory">Add an Accessory</a></li>
+        <li><a href="/logout">Log Out</a></li>
+        {{else}}
+        
+        <li><a href="/login">Log In</a></li>
+        <li><a href="/register">Register</a></li>
+        {{/if}}
+      </ul>
+    </header>
+
+    {{!-- <li><a href="/">Browse</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/">Add a Cube</a></li>
+        <li><a href="/">Add Accessory</a></li>
+        <li><a href="/">Logout</a></li>
+        <li><a href="/">Login</a></li>
+        <li><a href="/">Register</a></li --}}

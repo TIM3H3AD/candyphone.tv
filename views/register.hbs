@@ -1,0 +1,31 @@
+
+<body>
+  <div class="container">
+    {{>header}}
+    <main>
+	<h1>Register Form</h1>
+  {{#if errorData}}
+    {{#each errorData.errors}}
+      <div>{{msg}}</div>
+    {{/each}}
+  {{/if}}
+
+<div class="form">
+    <form action='/register' method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+
+        <label for="repeatPassword">Re-Password</label>
+        <input type="password" id="repeatPassword" name="repeatPassword">
+        <br>
+        <input type="submit" value="Register">
+    </form>
+</div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>

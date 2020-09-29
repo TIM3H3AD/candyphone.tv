@@ -1,20 +1,34 @@
 
   <div class="container">
-    <header>
-      <ul>
-        <li><img class="logo" src="/images/logo.png"></li>
-        <li><a href="/">Browse</a></li>
-        <li><a href="/createCube">Add a Cube</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </header>
+    {{>header}}
     <main>
       <h1>{{cube.name}}</h1>
-      <img class="cube" src="{{cube.imageUrl}}">
+      <img class="cube" src="{{cube.imageUrl}}" alt="cube image" />
       <div class="details">
         <p><span>Description:</span> {{cube.description}}</p>
+        
         <p><span>Difficulty level:</span> {{cube.difficultyLevel}}</p>
         <a class="btn" href="/">Back</a>
+        {{#if loggedIn}}
+          {{#if owned}}         
+            <a class="btn" href="/attachAccessory/{{cube._id}}">Attach new accessory</a>
+            <br>
+            <a class="btn" href="/edit/{{cube._id}}">Edit Cube</a>
+            <a class="btn" href="/delete/{{cube._id}}">Delete Cube</a>
+         {{/if}}
+        {{/if}}
+      </div>
+      <h2>Accessories</h2>
+      <div class="accessories">
+        {{#each accessory}}
+          <div class="accessory">
+            <img class="cube" src="{{imageUrl}}">
+            <h4 class="italic">{{name}}</h4>
+            <p><span>Description:</span> {{description}}</p>
+          </div>
+        {{else}}
+        <h3 class="italic">This cube has no current accessories</h3>
+        {{/each}}
       </div>
     </main>
   </div>

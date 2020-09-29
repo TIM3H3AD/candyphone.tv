@@ -1,0 +1,34 @@
+
+
+<body>
+  <div class="container">
+    {{>header}}
+    <main>
+      <h1>Attach a new accessory</h1>
+      <div class="form">
+        <h2>Rubiks Cube</h2>
+        <img class="cube" src="{{cube.imageUrl}}">
+       
+          {{#if accessoryAmount}}
+            <form action='/attachAccessory/{{cube._id}}' method="POST">
+              <label for="accessory">Accessories</label>
+              <select id="accessory" name="accessory">
+                {{#each accessorys}}
+                  <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+              </select>
+              <input type="submit" value="Attach">
+            </form>
+          {{else}}
+          <h3 class="italic">This cube has all available accessories so far or there are none available at currently...</h3>
+          {{/if}}
+          
+       
+        
+        <a class="btn" href="/details/{{cube._id}}">Back</a>
+      </div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>

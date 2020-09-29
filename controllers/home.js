@@ -1,13 +1,14 @@
 
-const Plink = require("../models/Plink.js");
+const Cube= require("../models/Cube.js");
 
 module.exports = (req,res)=>{
-
-    Plink.find({}).then(plinks => {
-        console.log(plinks);
+    console.log(req.login);
+    Cube.find({}).then(cubes => {
+        //console.log(cubes);
         res.render("index", {
-            title: "Plink",
-            plink:plinks
+            title: "Cubicle",
+            cube:cubes,
+            loggedIn:req.login
         });
         
     });   

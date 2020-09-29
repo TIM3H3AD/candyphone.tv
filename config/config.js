@@ -2,5 +2,7 @@ module.exports = {
     development: {
         port: process.env.PORT || 3000
     },
-    production: {}
+    production: {},
+    secret:"FaH,r*WO6XG>",
+    loggedIn:false
 };

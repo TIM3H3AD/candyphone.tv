@@ -2,14 +2,7 @@
 
 <body>
   <div class="container">
-    <header>
-      <ul>
-        <li><img class="logo" src="/images/logo.png"></li>
-        <li><a href="/">Browse</a></li>
-        <li><a href="/createCube">Add a Cube</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </header>
+    {{>header}}
     <main>
       <h1>Browser</h1>
       <form action="" method="">
@@ -24,7 +17,7 @@
           <img class="cube" src="{{imageUrl}}">
           <p class="name">{{name}}</p>
           <p><span>Difficulty level:</span>{{difficultyLevel}}</p>
-          <a class="btn" href="/details/{{id}}">Details</a>
+          <a class="btn" href="/details/{{_id}}">Details</a>
         </div>
       
       {{else}}
