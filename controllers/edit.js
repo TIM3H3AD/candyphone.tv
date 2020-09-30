@@ -24,8 +24,6 @@ module.exports={
             plink.name = req.body.name;
             plink.description = req.body.description;
             plink.imageUrl = req.body.imageUrl;
-            plink.difficultyLevel = req.body.difficultyLevel;
-
             plink.save().then((plink =>{
                 console.log(plink);
                 res.redirect("/details/"+req.params.id);

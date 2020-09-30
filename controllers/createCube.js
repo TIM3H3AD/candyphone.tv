@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const secret = require("../config/config").secret;
 const User = require("../models/User");
 const Plink = require("../models/Plink");
-const Accessory = require("../models/Timestamp");
+const Timestamp = require("../models/Timestamp");
 const { validationResult } = require('express-validator');
 
 module.exports ={
@@ -24,7 +24,6 @@ module.exports ={
                     name:formData.name,
                     description:formData.description,
                     imageUrl:formData.imageUrl,
-                    difficultyLevel:formData.difficultyLevel,
                     createdBy:user
                 })
                 .save().then((plink) => {

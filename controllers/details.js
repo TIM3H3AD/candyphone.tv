@@ -1,5 +1,5 @@
-
-const Plink = require("../models/Plink");
+const Plink = require("../models/Plink.js");
+const Timestamp = require("../models/Timestamp.js");
 
 module.exports = (req,res)=>{
     //console.log(plinkData)//

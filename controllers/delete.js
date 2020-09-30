@@ -1,4 +1,4 @@
-const Timestamp = require("../models/Timestamp.js");
+const Plink = require("../models/Plink.js");
 const Timestamp = require("../models/Timestamp.js");
 //deleteTimestamp
 module.exports={
