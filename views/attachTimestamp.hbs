@@ -4,28 +4,28 @@
   <div class="container">
     {{>header}}
     <main>
-      <h1>Attach a new accessory</h1>
+      <h1>Attach a TIMESTAMP/h1>
       <div class="form">
-        <h2>Rubiks Cube</h2>
-        <img class="cube" src="{{cube.imageUrl}}">
+        <h2>PLINK</h2>
+        <img class="plink" src="{{plink.imageUrl}}">
        
-          {{#if accessoryAmount}}
-            <form action='/attachAccessory/{{cube._id}}' method="POST">
-              <label for="accessory">Accessories</label>
-              <select id="accessory" name="accessory">
-                {{#each accessorys}}
+          {{#if timestampSize}}
+            <form action='/attachTimestamp/{{plink._id}}' method="POST">
+              <label for="timestamp">Timestamps</label>
+              <select id="timestamp" name="timestamp">
+                {{#each timestamps}}
                   <option value="{{_id}}">{{name}}</option>
                 {{/each}}
               </select>
               <input type="submit" value="Attach">
             </form>
           {{else}}
-          <h3 class="italic">This cube has all available accessories so far or there are none available at currently...</h3>
+          <h3 class="italic">This does not have any extra timestamps now...</h3>
           {{/if}}
           
        
         
-        <a class="btn" href="/details/{{cube._id}}">Back</a>
+        <a class="btn" href="/details/{{plink._id}}">Back</a>
       </div>
     </main>
   </div>

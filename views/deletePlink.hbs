@@ -3,25 +3,15 @@
   <div class="container">
    {{>header}}
     <main>
-	<h1>Delete Cube</h1>
+	<h1>Delete Plink</h1>
 <div class="form">
-  <form action='/delete/{{cube._id}}' method="POST">
+  <form action='/delete/{{plink._id}}' method="POST">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{cube.name}}" disabled="true"/>
+    <input type="text" id="name" name="name" value="{{plink.name}}" disabled="true"/>
     <label for="name">Description</label>
-    <textarea id="name" name="description" disabled="true"/>{{cube.description}}</textarea>
+    <textarea id="name" name="description" disabled="true"/>{{plink.description}}</textarea>
     <label for="image">ImageUrl</label>
-    <input type="text" id="image" name="imageUrl" value="{{cube.imageUrl}}" disabled="true"/>
-    <label for="difficulty">Difficulty</label>
-    <select id="difficulty" name="difficultyLevel" value="cube.difficultyLevel" disabled="true"/>
-      <option value="{{cube.difficultyLevel}}" hidden="hidden" selected="selected">{{cube.difficultyLevel}}</option>
-      <option value="1">1 - Very Easy</option>
-      <option value="2">2 - Easy</option>
-      <option value="3">3 - Medium (Standard 3x3)</option>
-      <option value="4">4 - Intermediate</option>
-      <option value="5">5 - Expert</option>
-      <option value="6">6 - Hardcore</option>
-    </select>
+    <input type="text" id="image" name="imageUrl" value="{{plink.imageUrl}}" disabled="true"/>
     <input type="submit" value="Delete">
   </form>
 </div>
