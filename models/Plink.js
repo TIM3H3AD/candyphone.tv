@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const Accessory = require("./Timestamp");
+const Timestamp = require("./Timestamp");
 const User = require("./User");
 
-const cubeSchema = new mongoose.Schema({
+const plinkSchema = new mongoose.Schema({
    name : { type: String, required: true },
    description : { type: String, required: true, maxlength: 200 },
    imageUrl: { type: String,  required: true, validate: {
@@ -12,9 +12,9 @@ const cubeSchema = new mongoose.Schema({
     message: props => `${props.value} is not a valid Url!`
   }, },
   difficultyLevel: { type: Number, required: true , min:1,max:6 },
-  accessories:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Accessory' }],
+  timestamps:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Timestamp' }],
   createdBy:{ type: mongoose.Schema.Types.ObjectId, ref: 'User', required:true }
 
 });
 
-module.exports = mongoose.model('Cube',cubeSchema);
+module.exports = mongoose.model('Plink',plinkSchema);
