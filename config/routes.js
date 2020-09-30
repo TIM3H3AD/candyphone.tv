@@ -4,13 +4,13 @@ let config =  require('./config');
 
 let homeRouter = require("../controllers/home.js");
 let aboutRouter = require("../controllers/about.js");
-let createRouter = require("../controllers/createCube.js").route;
+let createRouter = require("../controllers/createPlink.js").route;
 let detailsRouter = require("../controllers/details.js");
-let createData = require("../controllers/createCube.js").data;
-let createAccRoute = require("../controllers/createAccessory.js").route;
-let createAccData = require("../controllers/createAccessory.js").data;
-let attachAccessRoute = require("../controllers/attachAccessorys.js").route;
-let attachAccessData = require("../controllers/attachAccessorys.js").data;
+let createData = require("../controllers/createPlink.js").data;
+let createAccRoute = require("../controllers/createTimestamp.js").route;
+let createAccData = require("../controllers/createTimestamp.js").data;
+let attachAccessRoute = require("../controllers/attachTimestamp.js").route;
+let attachAccessData = require("../controllers/attachTimestamp.js").data;
 let loginRoute = require("../controllers/login.js").route;
 let loginData = require("../controllers/login.js").data;
 let registerRoute = require("../controllers/register.js").route;
@@ -30,10 +30,10 @@ module.exports = (app) => {
     app.get("/about",(req,res)=>{
         aboutRouter(req,res);
     });
-    app.get("/createCube",(req,res)=>{
+    app.get("/createPlink",(req,res)=>{
         createRouter(req,res);
     });
-    app.post("/createCube",[
+    app.post("/createPlink",[
         check("name").notEmpty().isString().trim().withMessage('Bad name'),
         check("description").notEmpty().isString().trim().isLength({max:200}).withMessage('Bad description'),
         check("imageUrl").notEmpty().trim().custom(value =>{
@@ -60,10 +60,10 @@ module.exports = (app) => {
         }
     });
 
-    app.get("/createAccessory",(req,res)=>{
+    app.get("/createTimestamp",(req,res)=>{
         createAccRoute(req,res);
     });
-    app.post("/createAccessory",(req,res)=>{
+    app.post("/createTimestamp",(req,res)=>{
         createAccData(req,res);
     });
     
@@ -76,10 +76,10 @@ module.exports = (app) => {
         detailsRouter(req,res);
     });
     
-    app.get("/attachAccessory/:cubeId",(req,res)=>{
+    app.get("/attachTimestamp/:PlinkId",(req,res)=>{
         attachAccessRoute(req,res);
     });
-    app.post("/attachAccessory/:cubeId",(req,res)=>{
+    app.post("/attachTimestamp/:PlinkId",(req,res)=>{
         attachAccessData(req,res);
     });
     

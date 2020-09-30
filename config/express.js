@@ -11,7 +11,7 @@ let config =  require('./config');
 
 module.exports = (app) => {
     //console.log(app);
-    mongoose.connect('mongodb://localhost:27017/cubicle',{ useNewUrlParser: true ,useUnifiedTopology: true, serverSelectionTimeoutMS: 2000  });
+    mongoose.connect('mongodb://localhost:27017/plinks',{ useNewUrlParser: true ,useUnifiedTopology: true, serverSelectionTimeoutMS: 2000  });
     //TODO: Setup the view engine
     app.engine('.hbs', handlebars({
         defaultLayout:"main",
