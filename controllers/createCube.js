@@ -2,14 +2,14 @@
 const jwt = require("jsonwebtoken");
 const secret = require("../config/config").secret;
 const User = require("../models/User");
-const Cube = require("../models/Cube");
-const Accessory = require("../models/Accessory");
+const Plink = require("../models/Plink");
+const Accessory = require("../models/Timestamp");
 const { validationResult } = require('express-validator');
 
 module.exports ={
     route:(req,res)=>{
-        res.render("createCube",{
-            title:"Create Cube Page",
+        res.render("createPlink",{
+            title:"Create Plink Page",
             loggedIn:req.login,
         });
         
@@ -20,15 +20,15 @@ module.exports ={
         let decodedToken = jwt.verify(req.cookies.token,secret)
             User.findById(decodedToken._id).then((user)=>{
                 console.log(user);
-                new Cube({
+                new Plink({
                     name:formData.name,
                     description:formData.description,
                     imageUrl:formData.imageUrl,
                     difficultyLevel:formData.difficultyLevel,
                     createdBy:user
                 })
-                .save().then((cube) => {
-                    console.log(cube._id);
+                .save().then((plink) => {
+                    console.log(plink._id);
                     res.redirect("/");
                 }).catch(err=>{
                     if(err){
@@ -62,4 +62,4 @@ function validURL(str) {
         // }
         // else if(formData.difficultyLevel == undefined||formData.difficultyLevel < 1 ||formData.difficultyLevel >6){
         //     console.log('No Image/ invalid image url!');
-        //     return;
+        //     return;;

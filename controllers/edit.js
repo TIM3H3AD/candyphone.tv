@@ -1,15 +1,15 @@
-const Cube= require("../models/Cube.js");
+const Plink= require("../models/Plink.js");
 
 module.exports={
     route:(req,res)=>{
-        Cube.findById(req.params.id).then(cube => {
-           //console.log(cube.createdBy);
+        Plink.findById(req.params.id).then(plink => {
+           //console.log(plink.createdBy);
            
            
-            res.render("editCube", {
-                title: "Edit Cube Info",
+            res.render("editPlink", {
+                title: "Edit Plink",
                 loggedIn:req.login,
-                cube:cube,
+                plink:plink,
             });
            
             
@@ -19,15 +19,15 @@ module.exports={
 
         //console.log()
 
-        Cube.findById(req.params.id)
-        .then((cube) => { 
-            cube.name = req.body.name;
-            cube.description = req.body.description;
-            cube.imageUrl = req.body.imageUrl;
-            cube.difficultyLevel = req.body.difficultyLevel;
+        Plink.findById(req.params.id)
+        .then((plink) => { 
+            plink.name = req.body.name;
+            plink.description = req.body.description;
+            plink.imageUrl = req.body.imageUrl;
+            plink.difficultyLevel = req.body.difficultyLevel;
 
-            cube.save().then((cube =>{
-                console.log(cube);
+            plink.save().then((plink =>{
+                console.log(plink);
                 res.redirect("/details/"+req.params.id);
             })).catch(err=>{
                 console.log(err);

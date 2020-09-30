@@ -1,29 +1,29 @@
-const Cube = require("../models/Cube.js");
-const Accessory = require("../models/Accessory.js");
-//deleteCube
+const Timestamp = require("../models/Timestamp.js");
+const Timestamp = require("../models/Timestamp.js");
+//deleteTimestamp
 module.exports={
     route:(req,res)=>{
-        Cube.findById(req.params.id).then(cube => {
+        Timestamp.findById(req.params.id).then(plink => {
             
-             res.render("deleteCube", {
-                 title: "Edit Cube Info",
+             res.render("deleteTimestamp", {
+                 title: "Edit Timestamp",
                  loggedIn:req.login,
-                 cube:cube,
+                 plink:plink,
              });
              
          });   
     },
     data:(req,res)=>{
-        Cube.findByIdAndDelete(req.params.id).then(cube => {
+        Timestamp.findByIdAndDelete(req.params.id).then(plink => {
             
-            Accessory.updateMany({
-                    "cubes": cube._id 
+            Timestamp.updateMany({
+                    "plinks": plink._id 
                 },
                 { 
-                    "$pull": { "cubes": cube._id } 
+                    "$pull": { "plinks": plink._id } 
                 }
-            ).then(accessories=>{
-                    console.log(accessories);
+            ).then(timestamps=>{
+                    console.log(timestamps);
                     res.redirect("/");
                 });
         

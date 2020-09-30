@@ -1,23 +1,23 @@
 
-const Cube = require("../models/Cube");
+const Plink = require("../models/Plink");
 
 module.exports = (req,res)=>{
-    //console.log(cubeData)//
+    //console.log(plinkData)//
     
     //console.log(req.params.id);
-    Cube.findById(req.params.id).populate("accessories").populate("createdBy").then(cube => {
-        //console.log(cube);
-        //console.log(cube.createdBy);
+    Plink.findById(req.params.id).populate("timestamps").populate("createdBy").then(plink => {
+        //console.log(plink);
+        //console.log(plink.createdBy);
         let owned = false;
-        if(req.userId == cube.createdBy._id){
+        if(req.userId == plink.createdBy._id){
             owned = true;
         }
         res.render("details", {
-            title: "Cubicle",
+            title: "Plink",
             loggedIn:req.login,
-            cube:cube,
+            plink:plink,
             owned:owned,
-            accessory:cube.accessories
+            timestamp:plink.timestamps
         });   
     });   
 

@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
-const saltRounds = 10;
+const saltRounds = 11;
 
 module.exports ={
     route:(req,res,errorData)=>{

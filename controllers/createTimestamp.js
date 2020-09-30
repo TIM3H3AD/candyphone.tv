@@ -1,11 +1,11 @@
-const Cube = require("../models/Cube");
-const Accessory = require("../models/Accessory");
+const plink = require("../models/plink");
+const Timestamp = require("../models/Timestamp");
 const { check, validationResult } = require('express-validator');
 
 module.exports ={
     route:(req,res)=>{
-        res.render("createAccessory",{
-            title:"Create Accessory Page",
+        res.render("createTimestamp",{
+            title:"Create Timestamp",
             loggedIn:req.login,
         });
         
@@ -28,7 +28,7 @@ module.exports ={
             console.log("fail");
             res.status(400);
         }else{
-            new Accessory(formData)
+            new Timestamp(formData)
             .save().then((acc) => {
                 console.log(acc._id);
                 res.status(201);
@@ -50,4 +50,3 @@ function validURL(str) {
     console.log(pattern.test(str));
     return !!pattern.test(str);
 }
-

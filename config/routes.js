@@ -4,9 +4,9 @@ let config =  require('./config');
 
 let homeRouter = require("../controllers/home.js");
 let aboutRouter = require("../controllers/about.js");
-let createRouter = require("../controllers/createPlink.js").route;
+let createRouter = require("../controllers/createTimestamp.js").route;
 let detailsRouter = require("../controllers/details.js");
-let createData = require("../controllers/createPlink.js").data;
+let createData = require("../controllers/createTimestamp.js").data;
 let createAccRoute = require("../controllers/createTimestamp.js").route;
 let createAccData = require("../controllers/createTimestamp.js").data;
 let attachAccessRoute = require("../controllers/attachTimestamp.js").route;

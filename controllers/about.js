@@ -1,6 +1,6 @@
 module.exports = (req,res)=>{
     res.render("about",{
-        title:"About Page",
+        title:"About:",
         loggedIn:req.login
     });
     

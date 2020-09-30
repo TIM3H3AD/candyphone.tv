@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Accessory = require("./Accessory");
+const Accessory = require("./Timestamp");
 const User = require("./User");
 
 const cubeSchema = new mongoose.Schema({
