@@ -47,8 +47,7 @@ module.exports = (app) => {
               // Indicates the success of this synchronous custom validator
               return true;
         }).withMessage('Bad image'),                                            
-        check("difficultyLevel").notEmpty().isInt({ min: 1, max: 6 }).withMessage('Bad difficulty')
-    ],(req,res)=>{
+  ],(req,res)=>{
         const errors = validationResult(req);
         //console.log(errors);
         //console.log(!errors.isEmpty());
@@ -179,8 +178,7 @@ module.exports = (app) => {
               // Indicates the success of this synchronous custom validator
               return true;
         }).withMessage('Bad image'),                                            
-        check("difficultyLevel").notEmpty().isInt({ min: 1, max: 6 }).withMessage('Bad difficulty')
-    ],(req,res)=>{
+      ],(req,res)=>{
         const errors = validationResult(req);
         //console.log(errors);
         //console.log(!errors.isEmpty());

@@ -3,7 +3,7 @@ const Timestamp = require("./Timestamp");
 const User = require("./User");
 
 const plinkSchema = new mongoose.Schema({
-   title : { type: String, required: true },
+   name : { type: String, required: true },
    description : { type: String, required: true, maxlength: 200 },
    imageUrl: { type: String,  required: true, validate: {
     validator: function(v) {
