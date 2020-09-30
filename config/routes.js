@@ -75,10 +75,10 @@ module.exports = (app) => {
         detailsRouter(req,res);
     });
     
-    app.get("/attachTimestamp/:PlinkId",(req,res)=>{
+    app.get("/attachTimestamp/:plinkId",(req,res)=>{
         attachAccessRoute(req,res);
     });
-    app.post("/attachTimestamp/:PlinkId",(req,res)=>{
+    app.post("/attachTimestamp/:plinkId",(req,res)=>{
         attachAccessData(req,res);
     });
     
