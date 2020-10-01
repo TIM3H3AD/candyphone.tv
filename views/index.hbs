@@ -4,16 +4,15 @@
   <div class="container">
     {{>header}}
     <main>
-      <h1>Browser</h1>
-      <form action="" method="">
-        <input type="text" class="search" name="search" placeholder="Search...">
-        <span>-</span>
+      <h1>Rare Earth Plinks</h1>
+      <form action="" method="" align="center">
+        <input type="text" class="search" name="search" placeholder="search Plinks by...">
         <input type="submit" value="search">
       </form>
       {{#each plink}}
-        <div class="plink">
+        <div class="plink" align="center">
           <img class="plink" src="{{imageUrl}}">
-          <p class="name">{{name}}</p>
+          <p>{{name}}</p>
           <a class="btn" href="/details/{{_id}}">Details</a>
         </div>
       
