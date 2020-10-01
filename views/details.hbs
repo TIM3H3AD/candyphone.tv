@@ -1,19 +1,18 @@
 
   <div class="container">
     {{>header}}
-    <main>
-      <h1>{{plink.name}}</h1>
-      <img class="plink" src="{{plink.imageUrl}}" alt="plink image" />
-      <div class="details">
-        <p><span>Description:</span> {{plink.description}}</p>
-        
-        <a class="btn" href="/">Back</a>
+    <main>              
         {{#if loggedIn}}
-          {{#if owned}}         
-            <a class="btn" href="/attachTimestamp/{{plink._id}}">Attach new timestamp</a>
+          {{#if owned}}   
+                <h1>{{plink.name}}</h1>
+          <img class="plink" src="{{plink.imageUrl}}" alt="plink image" />
+           <div class="details">
+           <p><span>Description:</span> {{plink.description}}</p>
+            <a class="btn" href="/createTimestamp/">Add Timestamp</a>
             <br>
-            <a class="btn" href="/edit/{{plink._id}}">Edit Plink</a>
-            <a class="btn" href="/delete/{{plink._id}}">Delete Plink</a>
+            <a class="btn" href="/edit/{{plink._id}}">Edit</a>
+            <br>
+            <a class="btn" href="/delete/{{plink._id}}">Delete</a>
          {{/if}}
         {{/if}}
       </div>

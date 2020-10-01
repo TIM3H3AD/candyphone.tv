@@ -4,7 +4,7 @@ const { check, validationResult } = require('express-validator');
 module.exports ={
     route:(req,res)=>{
         res.render("createTimestamp",{
-            title:"Create Timestamp",
+            title:"Add Timestamp",
             loggedIn:req.login,
         });
         
@@ -14,13 +14,6 @@ module.exports ={
         console.log(formData);
         check("name").notEmpty().isString().trim();
         check("description").notEmpty().isString().trim().isLength({max:200});
-        check("imageUrl").notEmpty().custom(value =>{
-            if (/^((https?|ftp):)?\/\/.*(jpeg|jpg|png|gif|bmp)$/.test(value)) {
-                throw new Error('Please make sure you add in an image (ends in .png, .jpg, .jpeg, .gif).');
-              }
-              // Indicates the success of this synchronous custom validator
-              return true;
-        });                                             
         const errors = validationResult(req);
         //console.log(errors);
         if(!errors.isEmpty()){
