@@ -9,7 +9,7 @@ const { validationResult } = require('express-validator');
 module.exports ={
     route:(req,res)=>{
         res.render("createPlink",{
-            title:"Create Plink Page",
+            title:"Create Plink",
             loggedIn:req.login,
         });
         

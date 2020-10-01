@@ -1,3 +1,4 @@
+const Plink = require("../models/Plink");
 const Timestamp = require("../models/Timestamp");
 const { check, validationResult } = require('express-validator');
 
