@@ -3,9 +3,9 @@ const Timestamp = require("../models/Timestamp.js");
 //deleteTimestamp
 module.exports={
     route:(req,res)=>{
-        Timestamp.findById(req.params.id).then(plink => {
+        Plink.findById(req.params.id).then(plink => {
             
-             res.render("deleteTimestamp", {
+             res.render("deletePlink", {
                  title: "Edit Timestamp",
                  loggedIn:req.login,
                  plink:plink,
@@ -14,7 +14,7 @@ module.exports={
          });   
     },
     data:(req,res)=>{
-        Timestamp.findByIdAndDelete(req.params.id).then(plink => {
+        Plink.findByIdAndDelete(req.params.id).then(plink => {
             
             Timestamp.updateMany({
                     "plinks": plink._id 
