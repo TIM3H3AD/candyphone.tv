@@ -5,6 +5,7 @@ const User = require("./User");
 const plinkSchema = new mongoose.Schema({
    name:{ type: String, required: true },
    description:{ type: String, required: true, maxlength: 200 },
+   url:{ type: String,  required: true },
    imageUrl:{ type: String,  required: true, validate: {
     validator: function(v) {
       return /.*(jpeg|jpg|png|gif|bmp)$/.test(v);

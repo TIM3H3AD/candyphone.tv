@@ -5,10 +5,16 @@
 	<h1>Edit Plink</h1>
 <div class="form">
   <form action='/edit/{{plink._id}}' method="POST">
+
     <label for="name">Name</label>
     <input type="text" id="name" name="name" value="{{plink.name}}">
+
     <label for="name">Description</label>
     <textarea id="name" name="description">{{plink.description}}</textarea>
+
+    <label for="name">URL</label>
+    <input type="text" id="url" name="url" value="{{plink.url}}">
+
     <label for="image">ImageUrl</label>
     <input type="text" id="image" name="imageUrl" value="{{plink.imageUrl}}">
     <input type="submit" value="Save">

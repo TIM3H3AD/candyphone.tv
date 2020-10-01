@@ -23,6 +23,7 @@ module.exports ={
                 new Plink({
                     name:formData.name,
                     description:formData.description,
+                    url:formData.url,
                     imageUrl:formData.imageUrl,
                     createdBy:user
                 })

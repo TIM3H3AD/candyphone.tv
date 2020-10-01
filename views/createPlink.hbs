@@ -1,15 +1,21 @@
 <div class="container">
     {{>header}}
     <main>
-      <h1>Create</h1>
+      <h1>Your newest Plink:</h1>
       <div class="form">
         <form action='/createPlink' method="Post">
           <label for="name">Title</label>
           <input type="text" id="name" name="name">
+
           <label for="name">Description</label>
           <textarea id="name" name="description"></textarea>
-          <label for="image">ImageUrl</label>
+
+          <label for="name">URL</label>
+          <input type="text" id="url" name="url">
+
+          <label for="image">Image URL</label>
           <input type="text" id="image" name="imageUrl">
+
           <input type="submit" value="Create">
         </form>
       </div>

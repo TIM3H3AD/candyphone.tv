@@ -36,6 +36,7 @@ module.exports = (app) => {
     app.post("/createPlink",[
         check("name").notEmpty().isString().trim().withMessage('Bad name'),
         check("description").notEmpty().isString().trim().isLength({max:200}).withMessage('Bad description'),
+        check("url").notEmpty().isString().trim().withMessage('Bad name'),
         check("imageUrl").notEmpty().trim().custom(value =>{
             //console.log(value)
             const regex = RegExp(/.*(jpeg|jpg|png|gif|bmp)$/);
@@ -167,6 +168,7 @@ module.exports = (app) => {
     app.post("/edit/:id",[
         check("name").notEmpty().isString().trim().withMessage('Bad name'),
         check("description").notEmpty().isString().trim().isLength({max:200}).withMessage('Bad description'),
+        check("url").notEmpty().isString().trim().withMessage('Bad name'),
         check("imageUrl").notEmpty().trim().custom(value =>{
             //console.log(value)
             const regex = RegExp(/.*(jpeg|jpg|png|gif|bmp)$/);
